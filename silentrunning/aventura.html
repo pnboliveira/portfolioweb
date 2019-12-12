@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Silent Running -PROTOTYPE-</title>
+    <link href="css/design.css" rel="stylesheet" />
+    <script src="js/codigo.js"></script>
+</head>
+<body onload="limpa()">
+    <div id="jogo">
+        <h1><img src="imagens/titlescreen.png" id="maintitle"/></h1>
+        <img src="imagens/screen1.png" id="imagemjogo"/>
+        <hr />
+        
+
+      <div id="escolha">
+      		<audio controls id="introAudio">
+				  <source src="audio/tumblr_li8l3zDiVt1qaqdvdo1.mp3" type="audio/mpeg">
+				
+			</audio>
+            Bem vindo à fuga. Antes de começarmos, escreve o nome da personagem: <br />
+            <hr />
+            <input type="text" id="nomealuno" />
+            <input type="button" id="comecar" value="Começa a fugir." onclick="inicia()" />
+            <input type="button" id="naming" value="Quem fez isto?" onclick="credits()" />
+        </div>
+        
+        <div id="credits">
+        	<img src="imagens/credits.png" />
+            <hr />
+            <div id="textcredits">
+            </div>
+            <hr />
+            <input type="button"  value="Voltar ao Ecrã Principal" onclick="location.reload();" />
+            <hr />
+        </div>
+        
+        <div id="cena1">
+           
+            <audio controls id="gameAudio">
+				  <source src="audio/The Protomen - Silent Running_Breaking Out (2012).mp3" type="audio/mpeg">
+				
+			</audio>
+            <img src="imagens/screen2.png" />
+            <hr />
+            <div id="textocena">
+            </div>
+            <br />
+            <hr />
+            <input type="button"  value="Ir ao Bar?" onclick="cena2('bar')" />
+            <input type="button"  value="Entrar no Hotel?" onclick="cena2('hotel')" />
+            <hr />
+        </div>
+
+        <div id="cena2_op1">
+            <img src="imagens/screen3.png" />
+            <hr />
+            <div id="textocena_2op1"></div>
+            <hr />
+            <input type="button"  value="Tu gostas dela?" onclick="cena3('love')" />
+            <input type="button"  value="Ela traiu-te durante a relação?" onclick="cena3('trair')" />
+            <hr />
+        </div>
+
+
+        <div id="cena2_op2">
+            <img src="imagens/ed1.png" />
+            <hr />
+            <div id="textocena_2op2">
+          </div>
+            <audio controls id="gameAudio2">
+				  <source src="audio/1-02-the-poem-for-everyone-s-souls.mp3" type="audio/mpeg">
+			</audio>
+            
+          <hr />
+            <input type="button"  value="Reiniciar?" onclick="location.reload();" />
+            <input type="button" id="naming" value="Créditos" onclick="credits()" />         
+            <hr />
+        </div>
+
+         <div id="cena3_op2">
+            <img src="imagens/cheat1.png" id="choicetime"/>
+            <hr />
+            <div id="cena3final">
+             <div id="textocena_3op2"></div>
+             <hr />
+                   <select id="choices">
+                       <option value="1">1 - Foi uma vontade maior</option>
+                        <option value="2">2 - Não quis estar sozinha</option>
+                        <option value="3">3 - Foi a fúria da ocasião</option>
+                   </select>
+                   <input type="button" value="Adivinha!" onclick="getItRight()"/>
+
+            <hr />
+            </div>
+             <div id="cena3_inicio">
+             <hr />
+             	<div id="textocena_3pt2"></div>
+             <hr />
+            <input type="button"  value="Reiniciar?" onclick="location.reload();" />  
+            <input type="button" id="naming" value="Créditos" onclick="credits()" />       
+            <hr />  
+             </div>
+        </div>
+        
+        <div id="cena3_op1">
+        	<img src="imagens/memory1.png" />
+            <hr />
+        	<div id="textocena_3op1"></div>
+            <hr />
+            <input type="button"  value="Seguinte ->" onclick="cena4()" />
+            <hr />
+            
+        </div>
+        
+        <div id="cena4">
+        	<img src="imagens/memory2.png" />
+            <hr />
+        	<div id="textocena_4"></div>
+            <hr />
+            <input type="button"  value="'Não te preocupes, eu posso adiar.' (Sair com ela)" onclick="cena5('herFood')" />
+            <input type="button"  value="'Eu compenso-te mal volte, prometo que fico bem.' (Sair c/ os amigos)" onclick="cena5('Brethren')" />
+            <hr />
+            
+        </div>
+        
+        <div id="cena5_ed2_1">
+        	<img src="imagens/side_end2.png" />
+            <hr />
+        	<div id="textocena_5ed2_1"></div>
+            <hr />
+            <input type="button"  value="Seguinte ->" onclick="cena5_ed2()" />
+            <hr />
+            
+        </div>
+        
+        <div id="cena5_ed1_1">
+        	<img src="imagens/side_end1.png" />
+            <hr />
+        	<div id="textocena_5ed1_1"></div>
+            <hr />
+            <input type="button"  value="Seguinte ->" onclick="cena5_ed1()" />
+            <hr />
+        </div>
+        
+        <div id="cena5_ed2_2">
+        	<img src="imagens/side_end2_2.png" />
+            <hr />
+        	<div id="textocena_5ed2_2"></div>
+            <hr />
+            <input type="button"  value="Reiniciar?" onclick="location.reload();" />  
+            <input type="button" id="naming" value="Créditos" onclick="credits()" />
+            <hr />
+        </div>
+        
+        <div id="cena5_ed1_2">
+        	<img src="imagens/side_end1_2.png" />
+            <hr />
+        	<div id="textocena_5ed1_2"></div>
+            <hr />
+            <input type="button"  value="Reiniciar?" onclick="location.reload();" />  
+            <input type="button" id="naming" value="Créditos" onclick="credits()" />
+            <hr />
+        </div>
+
+
+</div>
+</body>
+</html>
