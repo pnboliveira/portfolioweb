@@ -1,4 +1,7 @@
 $(document).ready(function () {
+
+    n =  new Date();
+    jQuery('.date').append(n.getFullYear());
     var isMobile = {
         Android: function () {
             return navigator.userAgent.match(/Android/i);
